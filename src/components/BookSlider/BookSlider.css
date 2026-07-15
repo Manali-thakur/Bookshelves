@@ -1,0 +1,25 @@
+.book-cover {
+  width: 100%;
+  height: 100%;
+  /* border: 10px solid black; */
+  filter: brightness(30%);
+  object-fit: cover;
+  
+}
+
+.book-cover:hover{
+    filter: brightness(150%);
+    transition-duration: 0.3s;
+}
+
+.book-card {
+  /* border: 2px solid black; */
+  margin: 9px 0px;
+  width: 12rem;
+  height: 20rem;
+  /* object-fit: contain; */
+}
+
+div.swiper-slide{
+  margin: 0px;
+}

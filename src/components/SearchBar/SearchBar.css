@@ -1,0 +1,10 @@
+.search-Con {
+  border: 2px solid black;
+  height: 80vh;
+
+  background-image: url("../../assets/bookshelves.jpeg");
+   background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(40%) blur(1.5px);
+}
+

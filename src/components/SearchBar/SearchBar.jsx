@@ -1,13 +1,21 @@
-import "./SearchBar.css";
+import "./SearchBar.css"
 
-function SearchBar() {
+function SearchBar({query, setQuery, onSearch}) {
   return (
-    <section className="container-xxl search-Con">
-      <div className="bg-Image-container">
-         {/* BG IMAGE */}
-      </div>
-    </section>
+    <div className="search-bar container-xxl">
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search for Books..."
+        className="search-input"
+      />
+      <button onClick={onSearch} className="search-button">
+        Search
+      </button>
+    </div>
   );
+  
 }
 
 export default SearchBar;

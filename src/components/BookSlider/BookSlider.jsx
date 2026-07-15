@@ -10,24 +10,25 @@ const bookImages = import.meta.glob("../../assets/Books/*.png", {
   import: "default",
 });
 
-const slides = Object.values(bookImages);
+// const slides = Object.values(bookImages);
+const baseSlides = Object.values(bookImages);
+const slides = [...baseSlides, ...baseSlides, ...baseSlides];
 
 function BookSlider() {
   return (
     <Swiper
       modules={[Virtual, Autoplay]}
-      spaceBetween={3}
+      spaceBetween={50}
       slidesPerView={6}
       virtual
       loop={true}
-      speed={7000}
+      speed={4700}
       autoplay={{
-        duration : 0.1,
-        // delay:1,
+        delay: 1,
         disableOnInteraction: false,
       }}>
       {slides.map((src, index) => (
-        <SwiperSlide key={src} virtualIndex={index}>
+        <SwiperSlide key={index} virtualIndex={index}>
           <div className="book-card">
             <img src={src} alt={`Book ${index + 1}`} className="book-cover" />
           </div>

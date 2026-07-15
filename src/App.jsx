@@ -9,7 +9,7 @@ import { useState } from "react";
 const api_key = import.meta.env.VITE_API_KEY;
 
 function App() {
-  const [query, setQuery] = useState("book");
+  const [query, setQuery] = useState("");
   const [books, setBooks] = useState([]);
   const [error, setError] = useState("");
 
@@ -36,10 +36,10 @@ function App() {
   return (
     <>
       <Header />
-      <SearchBar />
+      <SearchBar query={query} setQuery={setQuery} onSearch={searchBook} />
+      
       <BookSlider />
       <BookSliderReverse />
-      <button onClick={searchBook}>Search</button>
     </>
   );
 }

@@ -2,17 +2,19 @@ import "./Header.css";
 
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav
+      className="navbar navbar-expand-lg bg-body-tertiary"
+      data-bs-theme="dark">
       <div className="container-fluid">
         <img
-          src="./favicon-icon.png"
+          src="./ICON/favicon-icon.png"
           alt="Bookshelves"
-          width="40"
-          height="40"
+          width="35"
+          height="45"
           className="d-inline-block align-text-top navbar-brand"
         />
-        {/* <h4 className="navbar-brand">Bookshelves</h4> */}
-        &nbsp; &nbsp;
+        {/* &nbsp; &nbsp; */}
+
         <button
           className="navbar-toggler"
           type="button"
@@ -23,6 +25,7 @@ function Header() {
           aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
             <a className="nav-link active" aria-current="page" href="/">

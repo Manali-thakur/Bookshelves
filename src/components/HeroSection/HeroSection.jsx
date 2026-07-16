@@ -1,12 +1,15 @@
-import "./HeroSection.css"
+import "./HeroSection.css";
 
-function Herosection(){
-    return (
-      <section className="herosection container-xxl">
-        <h1 className="herosection-title">BookShelves</h1>
-        <h3 className="herosection-quote">
-          Your next favorite book is just a search away.
-        </h3>
-      </section>
-    );
+function HeroSection({onStartClick}) {
+  return (
+    <section className="herosection container-xxl">
+      <h1 className="herosection-title">BookShelves</h1>
+      <h4 className="herosection-quote">
+        Your next favorite book is just a search away.
+      </h4>
+      <button onClick={onStartClick} className="letsStartButton">Let's Start</button>
+    </section>
+  );
 }
+
+export default HeroSection;

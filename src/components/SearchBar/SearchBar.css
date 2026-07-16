@@ -1,7 +1,7 @@
 .search-Container{
   height: 30vh;
-  /* background-color: rgb(55, 138, 131); */
-  background-image: url("../../assets/bookshelves.jpeg");
+  background-color: rgb(16, 21, 20);
+  /* background-color: rgb(1, 110, 110); */
   /* filter: brightness(50%); */
 }
 

@@ -1,8 +1,8 @@
-import "./SearchBar.css"
-
-function SearchBar({query, setQuery, onSearch}) {
+import "./SearchBar.css";
+function SearchBar({ query, setQuery, onSearch }) {
   return (
     <section className="search-Container container-xxl">
+      <h2 className="SearchBar-Heading">Start Your Reading Journey</h2>
       <div className="search-bar">
         <input
           type="text"
@@ -17,7 +17,6 @@ function SearchBar({query, setQuery, onSearch}) {
       </div>
     </section>
   );
-  
 }
 
 export default SearchBar;

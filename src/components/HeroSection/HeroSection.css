@@ -1,47 +1,54 @@
-.herosection{
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* border: 2px solid white; */
+.herosection {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(3, 79, 93, 600) 100%
+  );
+  background-image: url("../../assets/books-bg.png");
+  background-size: cover;
+  filter:contrast(1.1);
+  border-radius: 30px;
 }
 
-.herosection-title:hover{
-    transform: scale(1.1);
-    transition-duration: 1s;
-    transition-delay: 0.3s;
+.herosection-title:hover {
+  transform: scale(1.1);
+  transition-duration: 1s;
+  transition-delay: 0.3s;
 }
 
-.herosection-title{
-    /* border: 2px solid wheat; */
-    font-size: 6rem;
-    color: rgb(252, 239, 215);
+.herosection-title {
+  /* border: 2px solid wheat; */
+  font-size: 6rem;
+  color: rgb(252, 239, 215);
 }
 
-.herosection-quote{
-    font-family: serif;
-    font-size: 1.5rem;
-    /* color: rgb(165, 207, 207); */
-    color: grey;
+.herosection-quote {
+  font-family: serif;
+  font-size: 1.5rem;
+  /* color: rgb(165, 207, 207); */
+  color: rgb(160, 162, 162);
 }
 
-.herosection-quote:hover{
-    color: aliceblue;
-    transition-duration: 0.5s;
-
+.herosection-quote:hover {
+  color: aliceblue;
+  transition-duration: 0.5s;
 }
 
-.letsStartButton{
-    width: 10vw;
-    border-radius: 20px;
-    border: 0px;
-    margin-top: 15px;
-    padding: 7px;
-    background-color: rgb(17, 95, 95);
-    color: aliceblue;
+.letsStartButton {
+  width: 10vw;
+  border-radius: 20px;
+  border: 0px;
+  margin-top: 15px;
+  padding: 7px;
+  background-color: rgb(17, 95, 95);
+  color: aliceblue;
 }
 
-.letsStartButton:hover{
-    background-color: rgb(8, 47, 47);
+.letsStartButton:hover {
+  background-color: rgb(8, 47, 47);
 }

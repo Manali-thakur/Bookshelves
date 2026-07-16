@@ -1,7 +1,14 @@
 .search-Container{
+margin: 10px;
   height: 30vh;
-  background-color: rgb(16, 21, 20);
-  /* background-color: rgb(1, 110, 110); */
+  text-align: center;
+  color: whitesmoke;
+  display: flex;
+  /* border: 2px solid white; */
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  /* background: url(../../assets/books-bg.png); */
   /* filter: brightness(50%); */
 }
 
@@ -10,7 +17,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  gap: 5px;
+  gap: 10px;
 }
 
 .search-bar input{
@@ -30,4 +37,6 @@
 
 .search-bar button:hover{
   cursor: pointer;
+  background-color: rgb(2, 96, 96);
+  color: white;
 }

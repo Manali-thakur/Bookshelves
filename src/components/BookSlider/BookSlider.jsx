@@ -16,25 +16,27 @@ const slides = [...baseSlides, ...baseSlides, ...baseSlides];
 
 function BookSlider() {
   return (
-    <Swiper
-      modules={[Virtual, Autoplay]}
-      spaceBetween={50}
-      slidesPerView={6}
-      virtual
-      loop={true}
-      speed={4700}
-      autoplay={{
-        delay: 1,
-        disableOnInteraction: false,
-      }}>
-      {slides.map((src, index) => (
-        <SwiperSlide key={index} virtualIndex={index}>
-          <div className="book-card">
-            <img src={src} alt={`Book ${index + 1}`} className="book-cover" />
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <section className="bookslider-section">
+      <Swiper
+        modules={[Virtual, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={6}
+        virtual
+        loop={true}
+        speed={4700}
+        autoplay={{
+          delay: 1,
+          disableOnInteraction: false,
+        }}>
+        {slides.map((src, index) => (
+          <SwiperSlide key={index} virtualIndex={index}>
+            <div className="book-card">
+              <img src={src} alt={`Book ${index + 1}`} className="book-cover" />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
   );
 }
 

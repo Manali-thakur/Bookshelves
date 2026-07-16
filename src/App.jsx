@@ -6,6 +6,7 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import SearchResults from "./components/SearchResult/SearchResult";
 import BookSlider from "./components/BookSlider/BookSlider";
 import BookSliderReverse from "./components/BookSlider/BookSliderReverse";
+import BookQuoteSection from "./components/BookQuote/BookQuote";
 import { useState } from "react";
 import { useRef } from "react";
 
@@ -53,6 +54,7 @@ function App() {
         <SearchBar query={query} setQuery={setQuery} onSearch={searchBook} />
       </div>
       <SearchResults books={books} />
+      <BookQuoteSection />
     </>
   );
 }

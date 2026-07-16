@@ -1,4 +1,33 @@
+.search-Container{
+  height: 30vh;
+  /* background-color: rgb(55, 138, 131); */
+  background-image: url("../../assets/bookshelves.jpeg");
+  /* filter: brightness(50%); */
+}
+
 .search-bar{
-  height: 70vh;
-  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 5px;
+}
+
+.search-bar input{
+  width: 23rem;
+  height: 2.2rem;
+  border-radius: 10px;
+  border: 0px;
+}
+
+.search-bar button{
+  border-radius: 10px;
+  height: 2.2rem;
+  border: 0px;
+  font-weight: 10px;
+  width: 5rem;
+}
+
+.search-bar button:hover{
+  cursor: pointer;
 }

@@ -2,6 +2,7 @@ import "./App.css";
 
 import Header from "./components/Header/Header";
 import SearchBar from "./components/SearchBar/SearchBar";
+import SearchResults from "./components/SearchResult/SearchResult";
 import BookSlider from "./components/BookSlider/BookSlider";
 import BookSliderReverse from "./components/BookSlider/BookSliderReverse";
 import { useState } from "react";
@@ -37,7 +38,7 @@ function App() {
     <>
       <Header />
       <SearchBar query={query} setQuery={setQuery} onSearch={searchBook} />
-      
+      <SearchResults books={books} />
       <BookSlider />
       <BookSliderReverse />
     </>

@@ -7,6 +7,7 @@ import SearchResults from "./components/SearchResult/SearchResult";
 import BookSlider from "./components/BookSlider/BookSlider";
 import BookSliderReverse from "./components/BookSlider/BookSliderReverse";
 import BookQuoteSection from "./components/BookQuote/BookQuote";
+import Footer from "./components/Footer/Footer";
 import { useState } from "react";
 import { useRef } from "react";
 
@@ -55,6 +56,7 @@ function App() {
       </div>
       <SearchResults books={books} />
       <BookQuoteSection />
+      <Footer />
     </>
   );
 }

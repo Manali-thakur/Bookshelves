@@ -1,18 +1,56 @@
-.search-Container{
-margin: 10px;
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+.search-Container {
+  margin: 10px;
   height: 30vh;
   text-align: center;
   color: whitesmoke;
   display: flex;
-  /* border: 2px solid white; */
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
-  padding: 30px;
-  /* background: url(../../assets/books-bg.png); */
-  /* filter: brightness(50%); */
+  margin-top: 80px;
 }
 
-.search-bar{
+.SearchBar-Heading {
+  font-family: "Great Vibes", cursive;
+  font-size: 3.5rem;
+  /* text-align: center; */
+  margin-bottom: 25px;
+  color: whitesmoke;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  opacity: 0;
+  border-right: 3px solid #333;
+}
+
+
+.SearchBar-Heading.animate {
+  transition-delay: 0.5s;
+  opacity: 1;
+  animation:
+    typing 4s steps(28, end) forwards,
+    blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+.search-bar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,14 +58,14 @@ margin: 10px;
   gap: 10px;
 }
 
-.search-bar input{
+.search-bar input {
   width: 23rem;
   height: 2.2rem;
   border-radius: 10px;
   border: 0px;
 }
 
-.search-bar button{
+.search-bar button {
   border-radius: 10px;
   height: 2.2rem;
   border: 0px;
@@ -35,7 +73,7 @@ margin: 10px;
   width: 5rem;
 }
 
-.search-bar button:hover{
+.search-bar button:hover {
   cursor: pointer;
   background-color: rgb(2, 96, 96);
   color: white;

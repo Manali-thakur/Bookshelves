@@ -25,7 +25,7 @@ function SearchBar({ query, setQuery, onSearch }) {
   return (
     <section className="search-Container container-xxl">
       <h2 ref={headingRef} className="SearchBar-Heading">
-        Start Your Reading Journey
+        Start Your Reading Journey...
       </h2>
 
       <div className="search-bar">

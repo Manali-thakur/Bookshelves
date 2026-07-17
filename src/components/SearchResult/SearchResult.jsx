@@ -7,11 +7,16 @@ function SearchResults({ books }) {
   return (
     <div className="search-results">
       {books.map((book) => {
-        const { title, authors, imageLinks } = book.volumeInfo;
+        const { title, authors, imageLinks, previewLink } = book.volumeInfo;
         const cover = imageLinks?.thumbnail;
 
         return (
-          <div key={book.id} className="result-card">
+          <a
+            key={book.id}
+            href={previewLink || book.volumeInfo.infoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="result-card">
             {cover ? (
               <img src={cover} alt={title} className="result-cover" />
             ) : (
@@ -19,7 +24,7 @@ function SearchResults({ books }) {
             )}
             <p className="result-title">{title}</p>
             {authors && <p className="result-author">{authors.join(", ")}</p>}
-          </div>
+          </a>
         );
       })}
     </div>

@@ -2,6 +2,7 @@ import "./App.css";
 
 import Header from "./components/Header/Header";
 import HeroSection from "./components/HeroSection/HeroSection";
+import AboutSection from "./components/About/About";
 import SearchBar from "./components/SearchBar/SearchBar";
 import SearchResults from "./components/SearchResult/SearchResult";
 import BookSlider from "./components/BookSlider/BookSlider";
@@ -51,6 +52,7 @@ function App() {
       <HeroSection onStartClick={scrollToSearch} />
       <BookSlider />
       <BookSliderReverse />
+      <AboutSection />
       <div ref={searchSectionRef}>
         <SearchBar query={query} setQuery={setQuery} onSearch={searchBook} />
       </div>

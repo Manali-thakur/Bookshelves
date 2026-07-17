@@ -1,0 +1,43 @@
+.about-section {
+  padding: 80px 20px;
+  margin-top: 40px;
+  /* background-color: #1a1410; */
+  text-align: center;
+}
+
+.inverted-coma-left{
+    /* border: 2px solid wheat; */
+    display: flex;
+    font-size: 50px;
+    margin: -10px;
+}
+
+.inverted-coma-right{
+     /* border: 2px solid wheat; */
+    display: flex;
+    font-size: 50px;
+    margin: -10px;
+    justify-content: flex-end;
+}
+
+.about-content {
+    color: whitesmoke;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 2px solid grey;
+}
+
+.about-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f5f0e8;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cfc4b4;
+  margin-bottom: 16px;
+}

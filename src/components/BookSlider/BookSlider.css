@@ -1,29 +1,48 @@
-.bookslider-section{
+.bookslider-section {
   margin-top: 20px;
 }
 
 .book-cover {
   width: 100%;
   height: 100%;
-  /* border: 10px solid black; */
+  /* border: 10px solid white; */
   filter: brightness(30%);
   object-fit: cover;
   border: 2px solid white;
 }
 
-.book-cover:hover{
-    filter: brightness(150%);
-    transition-duration: 0.3s;
+.book-cover:hover {
+  filter: brightness(80%);
+  transition-duration: 0.3s;
 }
 
 .book-card {
-  /* border: 2px solid black; */
+  /* border: 2px solid white; */
   margin: 9px 0px;
   width: 12rem;
-  height: 20rem;
+  height: 18rem;
   /* object-fit: contain; */
 }
 
-div.swiper-slide{
+div.swiper-slide {
   margin: 0px;
+}
+
+.book-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.book-title,
+.book-author {
+  margin: 6px 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.book-author {
+  font-size: 0.75rem;
+  opacity: 0.7;
 }

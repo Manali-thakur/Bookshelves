@@ -1,40 +1,64 @@
-import "./BookSlider.css";
-import { Virtual, Autoplay } from "swiper/modules";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
-import "swiper/css/virtual";
+import "./BookSlider.css";
 
-const bookImages = import.meta.glob("../../assets/Books/*.png", {
-  eager: true,
-  import: "default",
-});
+import { searchBooks } from "../../api/books";
+import { getCover } from "../../utils/bookHelpers";
 
-// const slides = Object.values(bookImages);
-const baseSlides = Object.values(bookImages);
-const slides = [...baseSlides, ...baseSlides, ...baseSlides];
+function BookSlider({
+  query = "subject:fiction",
+  reverse = false,
+  speed = 4700,
+}) {
+  const [books, setBooks] = useState([]);
 
-function BookSlider() {
+  useEffect(() => {
+    const controller = new AbortController();
+    searchBooks(query, { signal: controller.signal, maxResults: 30 })
+      .then((items) => setBooks(items.filter((b) => getCover(b.volumeInfo))))
+      .catch((err) => {
+        if (err.name !== "AbortError") console.error(err);
+      });
+    return () => controller.abort();
+  }, [query]);
+
+  if (books.length === 0) return null;
+
+  // loop mode needs enough slides to fill the row
+  const slides = books.length < 14 ? [...books, ...books] : books;
+
   return (
     <section className="bookslider-section">
       <Swiper
-        modules={[Virtual, Autoplay]}
+        modules={[Autoplay]}
         spaceBetween={50}
         slidesPerView={6}
-        virtual
         loop={true}
-        speed={4700}
+        speed={speed}
         autoplay={{
           delay: 1,
           disableOnInteraction: false,
+          reverseDirection: reverse,
         }}>
-        {slides.map((src, index) => (
-          <SwiperSlide key={index} virtualIndex={index}>
-            <div className="book-card">
-              <img src={src} alt={`Book ${index + 1}`} className="book-cover" />
-            </div>
-          </SwiperSlide>
-        ))}
+        {slides.map((book, i) => {
+          const { title, authors } = book.volumeInfo;
+          return (
+            <SwiperSlide key={`${book.id}-${i}`}>
+              <Link to={`/book/${book.id}`} className="book-card">
+                <img
+                  src={getCover(book.volumeInfo)}
+                  alt={title}
+                  className="book-cover"
+                />
+                <p className="book-title">{title}</p>
+                {authors && <p className="book-author">{authors[0]}</p>}
+              </Link>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </section>
   );

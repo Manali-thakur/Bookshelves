@@ -11,20 +11,19 @@
   );
   background-image: url("../../assets/books-bg.png");
   background-size: cover;
-  filter:contrast(1.1);
+  filter: contrast(1.1);
   border-radius: 30px;
-}
-
-.herosection-title:hover {
-  transform: scale(1.1);
-  transition-duration: 1s;
-  transition-delay: 0.3s;
 }
 
 .herosection-title {
   /* border: 2px solid wheat; */
   font-size: 6rem;
   color: rgb(252, 239, 215);
+
+  &:hover {
+    transition-duration: 1s;
+    filter: drop-shadow(2px 2px 2px #d8c5ad);
+  }
 }
 
 .herosection-quote {
@@ -32,11 +31,11 @@
   font-size: 1.5rem;
   /* color: rgb(165, 207, 207); */
   color: rgb(160, 162, 162);
-}
 
-.herosection-quote:hover {
-  color: aliceblue;
-  transition-duration: 0.5s;
+  &:hover {
+    color: aliceblue;
+    transition-duration: 0.5s;
+  }
 }
 
 .letsStartButton {
@@ -47,8 +46,10 @@
   padding: 7px;
   background-color: rgb(17, 95, 95);
   color: aliceblue;
-}
 
-.letsStartButton:hover {
-  background-color: rgb(8, 47, 47);
+  &:hover {
+    transition-duration: 1s;
+    filter: drop-shadow(1px 1px 1px #d8c5ad);
+    background-color: rgb(8, 47, 47);
+  }
 }

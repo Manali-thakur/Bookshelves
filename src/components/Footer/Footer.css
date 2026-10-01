@@ -1,5 +1,5 @@
 footer {
-  background-color: rgb(62, 62, 62);
+  background-color: #332821;
   padding-top: 70px;
 }
 
@@ -20,11 +20,13 @@ footer {
 }
 
 .column ul a {
-  color: whitesmoke;
+  color: darkgray;
+  text-decoration: none;
 }
 
 .column ul a:hover {
   color: rgb(88, 186, 186);
+  
 }
 
 .column li {
@@ -32,6 +34,7 @@ footer {
 }
 
 .footer-bottom {
+  color: darkgray;
   margin-top: 45px;
   padding-bottom: 15px;
 }

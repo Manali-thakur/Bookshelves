@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <div className="container text-center">
-        <div className="footer-row">
+        {/*   <div className="footer-row">
           <div className="column">
             <h4>Company</h4>
             <ul>
@@ -69,10 +69,12 @@ function Footer() {
               
             </ul>
           </div>
-        </div>
+        </div> */}
         <article className="footer-bottom">
-            <h6>&copy; 2026 BookShelves. All rights reserved.</h6>
-            <p><i>Created and developed by Manali</i></p>
+          <h6>&copy; 2026 BookShelves. All rights reserved.</h6>
+          <p>
+            <i>Created and developed by M</i>
+          </p>
         </article>
       </div>
     </footer>

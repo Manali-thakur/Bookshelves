@@ -1,5 +1,6 @@
-// components/SearchResults/SearchResults.jsx
+import { Link } from "react-router-dom";
 import "./SearchResult.css";
+import { getCover } from "../../utils/bookHelpers";
 
 function SearchResults({ books }) {
   if (books.length === 0) return null;
@@ -7,16 +8,11 @@ function SearchResults({ books }) {
   return (
     <div className="search-results">
       {books.map((book) => {
-        const { title, authors, imageLinks, previewLink } = book.volumeInfo;
-        const cover = imageLinks?.thumbnail;
+        const { title, authors } = book.volumeInfo;
+        const cover = getCover(book.volumeInfo);
 
         return (
-          <a
-            key={book.id}
-            href={previewLink || book.volumeInfo.infoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="result-card">
+          <Link key={book.id} to={`/book/${book.id}`} className="result-card">
             {cover ? (
               <img src={cover} alt={title} className="result-cover" />
             ) : (
@@ -24,7 +20,7 @@ function SearchResults({ books }) {
             )}
             <p className="result-title">{title}</p>
             {authors && <p className="result-author">{authors.join(", ")}</p>}
-          </a>
+          </Link>
         );
       })}
     </div>

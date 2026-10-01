@@ -1,6 +1,12 @@
 /* src/index.css */
 body {
   margin: 0;
-  background-color: rgb(0, 0, 0);
+  /* background-color: rgb(0, 0, 0); */
+  background: radial-gradient(
+    circle at top left,
+    #0b0603 30%,
+    #332821 60%,
+    #4a2e1f 100%
+  );
   min-height: 100vh;
 }

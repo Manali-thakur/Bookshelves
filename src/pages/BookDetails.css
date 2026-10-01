@@ -1,0 +1,37 @@
+.details {
+  /* border: 1px solid white; */
+  color: white;
+  max-width: 98%;
+  margin: 0 auto;
+  padding: 44px;
+}
+.details-back {
+  /* border: 1px solid white; */
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  color: inherit;
+}
+.details-body {
+  /* border: 1px solid white; */
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.details-cover {
+  width: 200px;
+  align-self: flex-start;
+  border-radius: 6px;
+}
+.details-info {
+    /* border: 1px solid white; */
+  flex: 1;
+  min-width: 260px;
+}
+.details-status {
+    /* border: 1px solid white; */
+  text-align: center;
+  padding: 48px 24px;
+}

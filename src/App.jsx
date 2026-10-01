@@ -1,63 +1,34 @@
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/Header/Header";
-import HeroSection from "./components/HeroSection/HeroSection";
-import AboutSection from "./components/About/About";
-import SearchBar from "./components/SearchBar/SearchBar";
-import SearchResults from "./components/SearchResult/SearchResult";
-import BookSlider from "./components/BookSlider/BookSlider";
-import BookSliderReverse from "./components/BookSlider/BookSliderReverse";
-import BookQuoteSection from "./components/BookQuote/BookQuote";
 import Footer from "./components/Footer/Footer";
-import { useState } from "react";
-import { useRef } from "react";
+import Home from "./pages/Home";
+import BookDetails from "./pages/BookDetails";
 
-// importing api key
-const api_key = import.meta.env.VITE_API_KEY;
+// start each new page at the top (only when the path changes, not the search)
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
-  const [query, setQuery] = useState("");
-  const [books, setBooks] = useState([]);
-  const [error, setError] = useState("");
-
-  const searchSectionRef = useRef(null);
-
-  const scrollToSearch = () => {
-    searchSectionRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  // API ENDpoint
-  const searchBook = async () => {
-    if (!query.trim()) return;
-
-    setError("");
-    setBooks([]);
-
-    try {
-      const res = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${query}:keyes&key=${api_key}`,
-      );
-      if (!res.ok) throw new error("API error");
-      const data = await res.json();
-      console.log(data);
-      setBooks(data.items || []);
-    } catch (err) {
-      console.log(err.message);
-      setError("Something went wrong");
-    }
-  };
   return (
     <>
+      <ScrollToTop />
       <Header />
-      <HeroSection onStartClick={scrollToSearch} />
-      <BookSlider />
-      <BookSliderReverse />
-      <AboutSection />
-      <div ref={searchSectionRef}>
-        <SearchBar query={query} setQuery={setQuery} onSearch={searchBook} />
-      </div>
-      <SearchResults books={books} />
-      <BookQuoteSection />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/book/:id" element={<BookDetails />} />
+        <Route
+          path="*"
+          element={<p className="search-status">Page not found</p>}
+        />
+      </Routes>
       <Footer />
     </>
   );

@@ -6,16 +6,18 @@ function Header() {
       className="navbar navbar-expand-lg bg-body-tertiary"
       data-bs-theme="dark">
       <div className="container-fluid">
-        <img
-          src="./ICON/favicon-icon.png"
-          alt="Bookshelves"
-          width="35"
-          height="45"
-          className="d-inline-block align-text-top navbar-brand"
-        />
+        <a href="/">
+          <img
+            src="./ICON/favicon-icon.png"
+            alt="Bookshelves"
+            width="35"
+            height="45"
+            className="d-inline-block align-text-top navbar-brand"
+          />
+        </a>
         {/* &nbsp; &nbsp; */}
 
-        <button
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -24,9 +26,9 @@ function Header() {
           aria-expanded="false"
           aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
-        </button>
+        </button> */}
 
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        {/* <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
             <a className="nav-link active" aria-current="page" href="/">
               Home
@@ -43,8 +45,8 @@ function Header() {
             <a className="nav-link" aria-disabled="true">
               New Arrival
             </a>
-          </div>
-        </div>
+          </div> 
+        </div> */}
       </div>
     </nav>
   );

@@ -49,15 +49,8 @@ async function request(params, path = "", signal) {
       reason = (await res.json()).error?.message;
     } catch {
       /* not JSON */
+      console.error("Books API error:", res.status, res.statusText);
     }
-    console.log(
-      "Books API ok:",
-      data.items?.length ?? 0,
-      "returned for",
-      params.get("q") ?? path,
-    );
-    if (!data.items?.length)
-      console.warn("Empty response body:", JSON.stringify(data));
   }
 
   const data = await res.json();

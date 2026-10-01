@@ -1,4 +1,4 @@
-/* components/SearchResults/SearchResults.css */
+/* components/SearchResult/SearchResults.css */
 .search-results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -18,7 +18,7 @@
   text-align: center;
 }
 
-.result-card:hover{
+.result-card:hover {
   transform: translateY(-4px);
   transition: transform 0.2s ease;
 }
